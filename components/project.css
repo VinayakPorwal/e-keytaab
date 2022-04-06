@@ -32,7 +32,7 @@
     width: 55%;
   }
   
-  button {
+  /* button {
     border: none;
     border-radius: 0 0 5px 5px;
     outline: 0;
@@ -42,17 +42,42 @@
     background-color: var(--color);
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
+    margin: 0px 4px;
     font-size: 18px;
-  }
-  
+  } */
+    
   button:hover {
     opacity: 0.7;
   }
   
+  .button {
+    border: none !important;
+    border-radius:  5px 5px  !important;
+    outline: 0 !important;
+    display: inline-block !important;
+    color: var(--colorb) !important;
+    background-color: var(--color) !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    /* width: 50% !important; */
+    margin: 0px 4px !important;
+    font-size: 18px !important;
+    text-decoration: none;
+    padding: 5px;
+  }
+
+  .button:hover {
+    opacity: 0.7;
+  }
+  
+  p{
+    margin: 3px;
+  }
   .projectcard {
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5);
-    max-width: 300px;
+    /* max-width: 300px; */
+    display: flex;
     margin: 10px auto;
     text-align: center;
     background-color: var(--colorb);
@@ -60,9 +85,22 @@
     /* z-index: -1; */
     color: var(--color);
   }
+  .qouteshead {
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    /* display: flex; */
+    margin: 10px auto;
+    text-align: center;
+    background-color: var(--colorb);
+    border-radius: 5px 5px 5px 5px;
+    /* z-index: -1; */
+    padding: 8px 4px;
+    color: var(--color);
+  }
   .projectcard img {
     display: block;
     margin: auto;
+    box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.7);
   }
   
   .pcontainer {
@@ -83,14 +121,12 @@
   @media screen and (max-width: 600px) {
     /* Full-width containers */
     .pcontainer {
-      width: 100%;
+      /* width: 100%; */
       padding-left: 25px;
       padding-right: 25px;
     }
   
-    .row {
-      width: 100%;
-    }
+ 
     .projillus {
       display: none !important;
     }
@@ -101,26 +137,26 @@
     align-items: center;
     position: sticky;
     top: 50px;
-    height: 100vh;
+    /* height: 100vh; */
     width: 45%;
+    margin: auto !important;
     background-color: var(--white);
   }
   .projhead {
     font-size: xx-large;
-    font-family: system-ui;
+    font-family: system-ui !important;
     margin: 0 auto;
     text-align: center;
-    margin-top: 25%;
   }
   
   .projillus img {
     top: 25%;
     max-width: 500px;
     background-color: var(--dblue);
-    padding: 40px 0;
+    /* padding: 40px 0; */
     margin: 20px 0;
-    border-radius: 165px 247px 87px 87px;
-    transform: rotateY(180deg);
+    /* border-radius: 165px 247px 87px 87px; */
+    /* transform: rotateY(180deg); */
     box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.7);
   }
   

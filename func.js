@@ -1,5 +1,5 @@
 var qoute = document.getElementById("qoutes");
-var author = document.getElementById("author");
+var Qauthor = document.getElementById("Qauthor");
 function qoutes() {
   // const api_url = "https://zenquotes.io/api/quotes/";
   var randomNumber = Math.floor(Math.random() * 100);
@@ -17,7 +17,7 @@ function qoutes() {
     //   console.log(data[randomNumber]["text"]+  data[randomNumber]["author"]);
       qoute.innerHTML =
         data[randomNumber]["text"] ;
-        author.innerHTML = data[randomNumber]["author"];
+        Qauthor.innerHTML = data[randomNumber]["author"];
     })
 
     .catch((err) => alert("cant Find citty name in Our Database!"));

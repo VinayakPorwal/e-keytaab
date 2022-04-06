@@ -4,15 +4,36 @@
   </head>
   <body>
     <div id="content"></div>
+    <div id="title"></div>
+    <div id="author"></div>
+    <div id="category"></div>
+    <img alt="" id="image" />
+    <div>
+      <a id="link">link</a>
+    </div>
     <script>
-      function handleResponse(response) {
-      for (var i = 0; i < response.items.length; i++) {
-        var item = response.items[i];
-        // in production code, item.text should have the HTML entities escaped.
-        document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
+      function dataa() {
+        var preview = document.getElementById("image");
+        var title = document.getElementById("title");
+        var link = document.getElementById("link");
+        var category = document.getElementById("category");
+        var auhtor = document.getElementById("auhtor");
+        fetch(
+          "https://www.googleapis.com/books/v1/volumes?q=flowers&filter=full&key=AIzaSyBUGfZ8xZ6aTFTwD6dpj5h5X3-vrLahxHw"
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data.items[0]);
+            preview.src = data.items[0].volumeInfo.imageLinks.smallThumbnail;
+            title.innerHTML =  data.items[0].volumeInfo.title;
+            link.href =  data.items[0].volumeInfo.previewLink;
+            category.innerHTML = data.items[0].volumeInfo.categories;
+            author.innerHTML = data.items[0].volumeInfo.authors;
+          })
+
+          .catch((err) => alert("cant Find citty name in Our Database!"));
       }
-    }
+      dataa();
     </script>
-    <script src="https://www.googleapis.com/books/v1/volumes?q=apis&callback=handleResponse"></script>
   </body>
 </html>

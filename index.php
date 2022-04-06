@@ -122,19 +122,22 @@ header('Access-Control-Allow-Origin: *');
 
 <body>
     <?php include 'components/navbar.php'; ?>
-    <div class="projectcard">
-      
-            <i class= 'fa fa-book'></i>
-      
-        
+
+  <h3 class="projhead">QUOTE of The DAY</h3>
+    <div class="qouteshead">
+        <i class='fa fa-quote-left' style="font-size: xx-large;"></i>
         <div>
-            <h2 id="author"></h2>
+            <h2 id="Qauthor"></h2>
             <p id="qoutes" class="title"></p>
-           
         </div>
-        
     </div>
-    <div class="head">
+
+    <?php include 'components/qoute.php'; ?>
+
+
+
+    <!-- -------------NOTES------------- -->
+    <!-- <div class="head">
         <div id="chck">Your Notes are Here</div>
         <div class="tool" onclick="fetchnote()"><em>Reload </em><i class='fa fa-refresh'></i></div>
     </div>
@@ -146,7 +149,9 @@ header('Access-Control-Allow-Origin: *');
         <input type="text" name="text" id="input" placeholder="Enter Reason">
         <i id="sendbtn" onclick="sendnote()" style="font-size:larger; align-self:center" class='fa fa-plus-square'></i>
 
-    </div>
+    </div> -->
+
+
     <script>
         var datas = document.querySelector('.notes');
         var rs = document.querySelector('#rs');
@@ -179,7 +184,7 @@ header('Access-Control-Allow-Origin: *');
             xhttp.send();
 
         }
-        window.onload = fetchnote();
+        // window.onload = fetchnote();
 
         function sendnote() {
 
@@ -237,6 +242,24 @@ header('Access-Control-Allow-Origin: *');
         function editnote(id) {
             document.getElementById(id).contentEditable = true;
             document.getElementById(id).style.border = "1px solid";
+        }
+
+
+
+        function sidenav() {
+            if (document.getElementById("sidebar").style.display == "none") {
+                document.getElementById("sidebar").style.display = "flex";
+                document.getElementById("hambar").style.transform = "rotate(90deg)";
+                document.getElementById("myBar").style.height = "2px !important";
+                document.getElementById("mytrack").style.background = "var(--grey)";
+                document.getElementById("mytrack").style.height = "1px !important";
+            } else {
+                document.getElementById("sidebar").style.display = "none";
+                document.getElementById("hambar").style.transform = "rotate(0deg)";
+                document.getElementById("myBar").style.height = "3px ";
+                document.getElementById("mytrack").style.background = "var(--lightblack)";
+                document.getElementById("mytrack").style.height = "3px";
+            }
         }
     </script>
     <script src='func.js'></script>
