@@ -1,0 +1,8 @@
+{
+    "editor.mouseWheelZoom": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "workbench.iconTheme": "material-icon-theme",
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    }
+}

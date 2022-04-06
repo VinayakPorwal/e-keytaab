@@ -1,0 +1,123 @@
+:root {
+    --white: #ffffff;
+    --dblue: #7289da;
+    --grey: #99aab5;
+    --lightblack: #2c2f33;
+    --black: #23272a;
+    --yellow: #ffe700;
+    --green: #74ee15;
+    --skyblue: #4deeea;
+    --darkgrey: #1f2937;
+    --slety: #d1d5db;
+  }
+  
+  .logo {
+    display: block;
+    margin: 0;
+  }
+  .navbar {
+    z-index: 2;
+    align-items: center;
+    background-color: var(--lightblack);
+    position: sticky;
+    top: 0px;
+  }
+  
+  .rightside {
+    display: flex;
+    height: 50px;
+    align-items: center;
+  }
+  .tab {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.875rem;
+    margin: auto 20px;
+    font-family: ui-sans-serif, system-ui, "-apple-system", "BlinkMacSystemFont",
+      "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  .tab:hover {
+    color: var(--grey);
+  }
+  #loginbtn,
+  #signinbtn {
+    background-color: var(--dblue) !important;
+    padding: 3px 5px !important;
+    margin: 4px 6px !important;
+    border-radius: 5px !important;
+    font-weight: 400 !important;
+    color: var(--white) !important;
+    font-size: medium;
+  }
+  .credin {
+    position: absolute;
+    right: 0px;
+    display: flex;
+    width: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  #hambar {
+    display: none;
+    padding: 5px;
+    margin: 5px;
+    font-size: larger;
+    color: var(--white);
+    transition: 0.5s;
+  }
+  #authicon {
+    display: none;
+    padding: 5px;
+    margin: 5px;
+    font-size: larger;
+    color: var(--white);
+  }
+  #sidebar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidetab {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.875rem;
+    margin: 7px 20px;
+    font-family: ui-sans-serif, system-ui, "-apple-system", "BlinkMacSystemFont",
+      "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  @media screen and (max-width: 600px) {
+    .tabgroup {
+      display: none;
+    }
+    .logo {
+      display: flex !important;
+      width: 100%;
+      margin: auto;
+    }
+    .credin {
+      display: none;
+    }
+    #hambar {
+      display: block;
+      margin-right: auto;
+    }
+    #authicon {
+      display: block;
+      margin-left: auto;
+    }
+    #sidebar {
+      display: flex;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    #sidebar {
+      display: none;
+    }
+    .sidetab {
+      display: none;
+    }
+  }
+  

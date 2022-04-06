@@ -1,0 +1,126 @@
+/* * {
+  box-sizing: border-box;
+} */
+
+/* Set a background color */
+:root {
+    --colorb: #ffffff;
+    --color: #1e1e1e;
+  
+    --white: #ffffff;
+    --dblue: #7289da;
+    --grey: #99aab5;
+    --lightblack: #2c2f33;
+    --black: #23272a;
+    --yellow: #ffe700;
+    --green: #74ee15;
+    --skyblue: #4deeea;
+  }
+  
+  .projects {
+    height: fit-content;
+    /* overflow-y: scroll; */
+    /* width: 99vw; */
+    background-color: #474e5d;
+    font-family: Helvetica, sans-serif;
+    /* z-index: -1; */
+  }
+  
+  .row {
+    /* max-width: 1100px; */
+    flex-wrap: wrap;
+    width: 55%;
+  }
+  
+  button {
+    border: none;
+    border-radius: 0 0 5px 5px;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: var(--colorb);
+    background-color: var(--color);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  button:hover {
+    opacity: 0.7;
+  }
+  
+  .projectcard {
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5);
+    max-width: 300px;
+    margin: 10px auto;
+    text-align: center;
+    background-color: var(--colorb);
+    border-radius: 5px 5px 5px 5px;
+    /* z-index: -1; */
+    color: var(--color);
+  }
+  .projectcard img {
+    display: block;
+    margin: auto;
+  }
+  
+  .pcontainer {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+  }
+  
+  /* The actual content */
+  .pcontent {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+    /* Full-width containers */
+    .pcontainer {
+      width: 100%;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  
+    .row {
+      width: 100%;
+    }
+    .projillus {
+      display: none !important;
+    }
+  }
+  .projillus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 50px;
+    height: 100vh;
+    width: 45%;
+    background-color: var(--white);
+  }
+  .projhead {
+    font-size: xx-large;
+    font-family: system-ui;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 25%;
+  }
+  
+  .projillus img {
+    top: 25%;
+    max-width: 500px;
+    background-color: var(--dblue);
+    padding: 40px 0;
+    margin: 20px 0;
+    border-radius: 165px 247px 87px 87px;
+    transform: rotateY(180deg);
+    box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.7);
+  }
+  
