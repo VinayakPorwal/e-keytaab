@@ -159,4 +159,12 @@
     /* transform: rotateY(180deg); */
     box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.7);
   }
-  
+
+  .projillus img:hover{
+    box-shadow: 0 4px 15px 0 rgb(114 137 218) !important;
+    cursor: pointer;
+  }
+  #image2:hover{
+    box-shadow: 0 4px 15px 0 rgb(114 137 218) !important;
+    cursor: pointer;
+  }

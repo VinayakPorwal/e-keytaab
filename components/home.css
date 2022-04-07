@@ -1,0 +1,168 @@
+/* :root {
+  --white: #ffffff;
+  --dblue: #7289da;
+  --grey: #99aab5;
+  --lightblack: #2c2f33;
+  --black: #23272a;
+  --yellow: #ffe700;
+  --green: #74ee15;
+  --skyblue: #4deeea;
+}
+
+
+
+.home {
+  background-color: var(--white);
+  height: 100vh;
+  overflow-y: scroll;
+}
+.half {
+  position: relative;
+  display: flex;
+}
+.one,
+.two {
+  width: 50%;
+}
+.one {
+  z-index: 1;
+}
+
+.two {
+  position: fixed;
+  z-index: 0;
+}
+
+#animemain {
+  position: fixed;
+  top: 100px;
+  right: -20vw;
+  border-radius: 15px;
+  height: 70% !important;
+
+  width: 70% !important;
+} */
+
+/* * {
+  box-sizing: border-box;
+} */
+
+/* Set a background color */
+:root {
+    --colorb: #ffffff;
+    --color: #1e1e1e;
+    --white: #ffffff;
+    --dblue: #7289da;
+    --grey: #99aab5;
+    --lightblack: #2c2f33;
+    --black: #23272a;
+    --yellow: #ffe700;
+    --green: #74ee15;
+    --skyblue: #4deeea;
+  }
+  .head {
+    color: var(--dblue);
+    font-weight: 800;
+    text-shadow: 1px 1px var(--black);
+    margin: 0px 0 0 4px;
+    font-size: xxx-large;
+    font-family: ui-rounded, system-ui;
+  }
+  .medium {
+    font-family: ui-serif, system-ui;
+    font-weight: 700;
+    font-size: xx-large;
+  }
+  
+  .home {
+    height: fit-content;
+    background-color: var(--white);
+    font-family: Helvetica, sans-serif;
+    /* z-index: -1; */
+  }
+  
+  .homerow {
+    /* max-width: 1100px; */
+    flex-wrap: wrap;
+    width: 45%;
+    /* text-align: center; */
+  }
+  
+  .title {
+    color: var(--black);
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 0 0;
+  }
+  .paragraph {
+    position: relative;
+    margin-top: 15%;
+    padding: 0 0 0 10%;
+    text-align: left;
+  }
+  .homebutton {
+    border: none;
+    border-radius: 5px;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 30px;
+    color: var(--colorb);
+    background-color: var(--color);
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+    margin: 20px 10px 10px 15%;
+    font-size: 16px;
+  }
+  
+  .homebutton:hover {
+    opacity: 0.7;
+  }
+  
+  .homeillus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  
+    margin: auto;
+    /* height: 100vh; */
+    width: 55%;
+    /* background-color: var(--white); */
+  }
+  .homehead {
+    font-size: xx-large;
+    font-family: system-ui;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15%;
+  }
+  
+  .homeillus img {
+    top: 25%;
+    max-width: 500px;
+    /* padding: 50px 0; */
+    margin: 40px 0;
+    background-color: var(--dblue);
+    border-radius: 536px 234px 0276px;
+    box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.7);
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+    .homerow {
+      width: 100%;
+    }
+    .paragraph {
+      margin-top: 5%;
+      text-align: center;
+      padding: 4px 15px;
+    }
+    .head {
+      font-size: xx-large;
+    }
+    .medium {
+      font-size: x-large;
+    }
+  }
+  

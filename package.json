@@ -1,0 +1,21 @@
+{
+  "name": "e-keytaab",
+  "version": "1.0.0",
+  "hommepage":"https://fookrey420.github.io/e-keytaab",
+  "description": "",
+  "main": "func.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages /"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fookrey420/e-keytaab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fookrey420/e-keytaab/issues"
+  }
+
+}

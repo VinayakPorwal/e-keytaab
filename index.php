@@ -1,5 +1,15 @@
-<?PHP
+<?php
+
 header('Access-Control-Allow-Origin: *');
+?>
+<?php
+session_start();
+if (!isset($_SESSION['loggedin'])) {
+    $loggedin = false;
+    header("location: entrypage.php");
+} else {
+    $loggedin = true;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,8 +18,10 @@ header('Access-Control-Allow-Origin: *');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/navbar.css">
     <link rel="stylesheet" href="components/project.css">
+    <link rel="stylesheet" href="components/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Document</title>
 </head>
@@ -121,9 +133,66 @@ header('Access-Control-Allow-Origin: *');
 </style>
 
 <body>
-    <?php include 'components/navbar.php'; ?>
+<nav class="navbar">
+    <div class="">
+        <div class="rightside">
+            <div class="logo">
+                <i id="hambar" class="fa fa-bars" onclick='sidenav()'></i>
+                <img id="navlogoimg" src='images/notebook.svg' alt="Workflow" />
+                <i id="authicon" class="fa fa-gear"></i>
+            </div>
+            <div class="navtab">
+                <div class="tabgroup">
 
-  <h3 class="projhead">QUOTE of The DAY</h3>
+                    <a class="tab" href='#'>hello</a>
+                    <a class="tab" href='#'>hello</a>
+                    <a class="tab" href='#'>hello</a>
+                    <a class="tab" href='#'>hello</a>
+                </div>
+            </div>
+            <?php
+            if ($loggedin == false) {
+
+                echo `<div class="credin">
+                        <a href="enrtypage.php">
+                            <button id="loginbtn">login</button>
+                        </a>
+                        <a href="enrtypage.php">
+                            <button id="signinbtn">signup</button>
+                        </a>
+                     </div>`;
+            } else {
+                echo `<div class="credin">
+              <a href="enrtypage.php">
+            <button id="loginbtn">` . $_SESSION['name'] . `</button>
+        </a>
+        <a href="enrtypage.php">
+            <button id="signinbtn">` . $_SESSION['name'] . `</button>
+        </a>
+              
+             </div>`;
+            }
+            ?>
+        </div>
+
+    </div>
+    <div id="sidebar">
+
+
+        <a class="sidetab" href='#'>hello</a>
+        <a class="sidetab" href='#'>hello</a>
+        <a class="sidetab" href='#'>hello</a>
+        <a class="sidetab" href='#'>hello</a>
+
+    </div>
+</nav>
+   
+    <div class="header">
+        <div class="progress-container " id="mytrack">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+    <h3 class="projhead">QUOTE of The DAY</h3>
     <div class="qouteshead">
         <i class='fa fa-quote-left' style="font-size: xx-large;"></i>
         <div>
@@ -132,7 +201,43 @@ header('Access-Control-Allow-Origin: *');
         </div>
     </div>
 
-    <?php include 'components/qoute.php'; ?>
+    <?php
+    include 'components/qoute.php';
+    ?>
+
+    <div class="home">
+
+        <div class="title">
+            <h1 class="heading">
+                <span class="head">Platfrom</span>
+                <span class="medium">to make Your</span>
+                <br />
+                <span class="head">Reading </span>
+                <span class="medium">Efficient and Smooth</span>
+            </h1>
+        </div>
+        <div style='
+          display: flex;
+          flex-wrap: wrap-reverse;
+          margin: 0 0 50px 0;
+       '>
+            <div class="homerow">
+                <p class="paragraph">
+                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+                    lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
+                    fugiat aliqua. Lorem ipsum dolor sit, amet consectetur adipisicing
+                    elit. Consequuntur, aliquam iste. Obcaecati rem similique eius
+                    accusamus placeat optio qui unde earum ad! Dolores unde a voluptatem
+                    elit. Consequuntur, aliquam iste. Obcaecati rem similique eius
+                    accusamus placeat optio qui unde earum ad! Dolores unde a voluptatem
+                </p>
+                <button class="homebutton">Get Started</button>
+            </div>
+            <div class="homeillus">
+                <img src='images/notebook.svg' alt="" />
+            </div>
+        </div>
+    </div>
 
 
 
@@ -153,99 +258,6 @@ header('Access-Control-Allow-Origin: *');
 
 
     <script>
-        var datas = document.querySelector('.notes');
-        var rs = document.querySelector('#rs');
-        var inp = document.querySelector('#input');
-        var check = document.querySelector('#chck');
-
-        // document.rs.onkeydown = function(evt) {
-        //     var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
-        //     if (keyCode == 13) {
-        //         sendnote();
-        //     }
-        // }
-        // document.inp.onkeydown = function(evt) {
-        //     var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
-        //     if (keyCode == 13) {
-        //         sendnote();
-        //         fetchnote();
-        //     }
-        // }
-
-        function fetchnote() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    datas.innerHTML = this.responseText;
-                    // check.innerHTML = "Note Fected Successfully"
-                }
-            };
-            xhttp.open("GET", "fetch/fetchnotes.php", true);
-            xhttp.send();
-
-        }
-        // window.onload = fetchnote();
-
-        function sendnote() {
-
-            if (inp.value.replace(/\s+/g, '').length == 0 || rs.value.replace(/\s+/g, '').length == 0) {
-                check.innerHTML = "Empty values!"
-            } else {
-
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        check.innerHTML = this.responseText;
-                        console.log(this.responseText)
-                    }
-                };
-            }
-            xhttp.open("POST", "fetch/sendnote.php", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send('rs=' + rs.value + '&text=' + inp.value);
-            fetchnote();
-            inp.value = "";
-            rs.value = "";
-        }
-
-        function deletenote(id) {
-
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    check.innerHTML = this.responseText;
-                    console.log(this.responseText)
-                }
-            };
-            xhttp.open("GET", "fetch/deletenote.php?id=" + id, true);
-            xhttp.send();
-            fetchnote();
-        }
-
-
-        function updatenote(id) {
-            var xhttp = new XMLHttpRequest();
-            console.log(document.getElementById(id).innerHTML);
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    check.innerHTML = this.responseText;
-                    console.log(this.responseText)
-                }
-            };
-            xhttp.open("POST", "fetch/updatenote.php", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send('id=' + id + '&text=' + document.getElementById(id).innerHTML);
-            document.getElementById(id).contentEditable = false;
-            fetchnote();
-        }
-
-        function editnote(id) {
-            document.getElementById(id).contentEditable = true;
-            document.getElementById(id).style.border = "1px solid";
-        }
-
-
-
         function sidenav() {
             if (document.getElementById("sidebar").style.display == "none") {
                 document.getElementById("sidebar").style.display = "flex";
@@ -260,6 +272,19 @@ header('Access-Control-Allow-Origin: *');
                 document.getElementById("mytrack").style.background = "var(--lightblack)";
                 document.getElementById("mytrack").style.height = "3px";
             }
+        }
+        window.onscroll = function() {
+            Function();
+        };
+
+        function Function() {
+            var winScroll =
+                document.body.scrollTop || document.documentElement.scrollTop;
+            var height =
+                document.documentElement.scrollHeight -
+                document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
         }
     </script>
     <script src='func.js'></script>

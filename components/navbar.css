@@ -120,4 +120,7 @@
       display: none;
     }
   }
-  
+  #navlogoimg{
+    height: 8vh;
+    width: auto;
+  }
