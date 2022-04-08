@@ -6,7 +6,7 @@ header('Access-Control-Allow-Origin: *');
 session_start();
 if (!isset($_SESSION['loggedin'])) {
     $loggedin = false;
-    header("location: entrypage.php");
+    header("location: components/entrypage.php");
 } else {
     $loggedin = true;
 }
@@ -112,6 +112,8 @@ if (!isset($_SESSION['loggedin'])) {
         padding: 2px 4px;
     }
 
+
+
     .dt {
         position: relative;
         margin-bottom: auto;
@@ -133,89 +135,47 @@ if (!isset($_SESSION['loggedin'])) {
 </style>
 
 <body>
-<nav class="navbar">
-    <div class="">
-        <div class="rightside">
-            <div class="logo">
-                <i id="hambar" class="fa fa-bars" onclick='sidenav()'></i>
-                <img id="navlogoimg" src='images/notebook.svg' alt="Workflow" />
-                <i id="authicon" class="fa fa-gear"></i>
-            </div>
-            <div class="navtab">
-                <div class="tabgroup">
-
-                    <a class="tab" href='#'>hello</a>
-                    <a class="tab" href='#'>hello</a>
-                    <a class="tab" href='#'>hello</a>
-                    <a class="tab" href='#'>hello</a>
-                </div>
-            </div>
-            <?php
-            if ($loggedin == false) {
-
-                echo `<div class="credin">
-                        <a href="enrtypage.php">
-                            <button id="loginbtn">login</button>
-                        </a>
-                        <a href="enrtypage.php">
-                            <button id="signinbtn">signup</button>
-                        </a>
-                     </div>`;
-            } else {
-                echo `<div class="credin">
-              <a href="enrtypage.php">
-            <button id="loginbtn">` . $_SESSION['name'] . `</button>
-        </a>
-        <a href="enrtypage.php">
-            <button id="signinbtn">` . $_SESSION['name'] . `</button>
-        </a>
-              
-             </div>`;
-            }
-            ?>
-        </div>
-
-    </div>
-    <div id="sidebar">
-
-
-        <a class="sidetab" href='#'>hello</a>
-        <a class="sidetab" href='#'>hello</a>
-        <a class="sidetab" href='#'>hello</a>
-        <a class="sidetab" href='#'>hello</a>
-
-    </div>
-</nav>
-   
+    <?php include 'components/navbar.php'; ?>
     <div class="header">
         <div class="progress-container " id="mytrack">
             <div class="progress-bar" id="myBar"></div>
         </div>
     </div>
-    <h3 class="projhead">QUOTE of The DAY</h3>
-    <div class="qouteshead">
-        <i class='fa fa-quote-left' style="font-size: xx-large;"></i>
-        <div>
-            <h2 id="Qauthor"></h2>
-            <p id="qoutes" class="title"></p>
-        </div>
-    </div>
 
-    <?php
-    include 'components/qoute.php';
-    ?>
+
+
 
     <div class="home">
 
-        <div class="title">
-            <h1 class="heading">
-                <span class="head">Platfrom</span>
-                <span class="medium">to make Your</span>
-                <br />
-                <span class="head">Reading </span>
-                <span class="medium">Efficient and Smooth</span>
-            </h1>
+
+        <div style='
+          display: flex;
+          flex-wrap: wrap-reverse;
+          margin: 0 0 50px 0;
+       '>
+            <div id="heading" class="homerow">
+                <div class="title">
+                    <h1 class="heading">
+                        <span class="head">Platfrom</span>
+                        <span class="medium">to make Your</span>
+                        <br />
+                        <span class="head">Reading </span>
+                        <span class="medium">Efficient and Smooth</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="homeillus">
+                <h3 class="projhead">QUOTE of The DAY</h3>
+                <div class="qouteshead">
+                    <i class='fa fa-quote-left' style="font-size: xx-large;"></i>
+                    <div>
+                        <h2 id="Qauthor"></h2>
+                        <p id="qoutes" class="title"></p>
+                    </div>
+                </div>
+            </div>
         </div>
+
         <div style='
           display: flex;
           flex-wrap: wrap-reverse;
@@ -274,10 +234,10 @@ if (!isset($_SESSION['loggedin'])) {
             }
         }
         window.onscroll = function() {
-            Function();
+            mFunction();
         };
 
-        function Function() {
+        function mFunction() {
             var winScroll =
                 document.body.scrollTop || document.documentElement.scrollTop;
             var height =

@@ -9,35 +9,33 @@
             <div class="navtab">
                 <div class="tabgroup">
 
-                    <a class="tab" href='#'>hello</a>
-                    <a class="tab" href='#'>hello</a>
-                    <a class="tab" href='#'>hello</a>
-                    <a class="tab" href='#'>hello</a>
+                    <a class="tab" href='index.php'>Home</a>
+                    <a class="tab" href='qoute.php'>Books</a>
+                    <a class="tab" href='components/demo.php'>About</a>
                 </div>
             </div>
-            <?php
-            if ($loggedin == false) {
+            <div class="credin">
 
-                echo `<div class="credin">
-                        <a href="enrtypage.php">
-                            <button id="loginbtn">login</button>
-                        </a>
-                        <a href="enrtypage.php">
-                            <button id="signinbtn">signup</button>
-                        </a>
-                     </div>`;
+                <?php
+            if ($loggedin == false) {
+                echo '<a href="enrtypage.php"><button
+                id="loginbtn">login</button>
+                </a>
+                <a href="enrtypage.php"><button
+                id="signinbtn">signup</button>
+                </a>';
             } else {
-                echo `<div class="credin">
-              <a href="enrtypage.php">
-            <button id="loginbtn">` . $_SESSION['name'] . `</button>
-        </a>
-        <a href="enrtypage.php">
-            <button id="signinbtn">` . $_SESSION['name'] . `</button>
-        </a>
-              
-             </div>`;
+                echo '
+                <a href="components/logout.php"><button
+                id="signinbtn">';
+                
+                echo $_SESSION['name'];
+                echo '</button>
+                </a>';
             }
             ?>
+            </div>
+
         </div>
 
     </div>

@@ -14,13 +14,14 @@ function qoutes() {
   fetch("https://type.fit/api/quotes")
     .then((response) => response.json())
     .then((data) => {
+      // console.log(data);
     //   console.log(data[randomNumber]["text"]+  data[randomNumber]["author"]);
       qoute.innerHTML =
         data[randomNumber]["text"] ;
         Qauthor.innerHTML = data[randomNumber]["author"];
     })
 
-    .catch((err) => alert("cant Find citty name in Our Database!"));
+    // .catch((err) => alert("cant Find citty name in Our Database!"));
 }
 qoutes();
 
@@ -116,3 +117,31 @@ qoutes();
 //     document.getElementById(id).style.border = "1px solid";
 // }
 
+function sidenav() {
+  if (document.getElementById("sidebar").style.display == "none") {
+      document.getElementById("sidebar").style.display = "flex";
+      document.getElementById("hambar").style.transform = "rotate(90deg)";
+      document.getElementById("myBar").style.height = "2px !important";
+      document.getElementById("mytrack").style.background = "var(--grey)";
+      document.getElementById("mytrack").style.height = "1px !important";
+  } else {
+      document.getElementById("sidebar").style.display = "none";
+      document.getElementById("hambar").style.transform = "rotate(0deg)";
+      document.getElementById("myBar").style.height = "3px ";
+      document.getElementById("mytrack").style.background = "var(--lightblack)";
+      document.getElementById("mytrack").style.height = "3px";
+  }
+}
+window.onscroll = function() {
+  mFunction();
+};
+
+function mFunction() {
+  var winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+  var height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
