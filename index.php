@@ -144,59 +144,81 @@ if (!isset($_SESSION['loggedin'])) {
 
 
 
+    <div class="qouteshead">
 
+        <h3 class="projhead">
+            <i class='fa fa-quote-left' style="font-size: large;color: var(--dblue);
+            position: relative;
+            top: -15px;
+            "></i>
+            <em style="color: var(--dblue)">QUOTE</em>
+            <i class='fa fa-quote-right' style="font-size: large;color: var(--dblue);
+            position: relative;
+            top: -15px;"></i>
+            of the DAY
+        </h3>
+        <hr>
+        <br>
+        <div style="padding: 0 5px;">
+            <em>
+                <h2 id="Qauthor"></h2>
+            </em>
+            <p id="qoutes" class="title2"></p>
+        </div>
+    </div>
     <div class="home">
 
 
-        <div style='
+        <!-- <div style='
           display: flex;
           flex-wrap: wrap-reverse;
           margin: 0 0 50px 0;
-       '>
-            <div id="heading" class="homerow">
-                <div class="title">
-                    <h1 class="heading">
-                        <span class="head">Platfrom</span>
-                        <span class="medium">to make Your</span>
-                        <br />
-                        <span class="head">Reading </span>
-                        <span class="medium">Efficient and Smooth</span>
-                    </h1>
-                </div>
-            </div>
-            <div class="homeillus">
-                <h3 class="projhead">QUOTE of The DAY</h3>
-                <div class="qouteshead">
-                    <i class='fa fa-quote-left' style="font-size: xx-large;"></i>
-                    <div>
-                        <h2 id="Qauthor"></h2>
-                        <p id="qoutes" class="title"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+       '> -->
+        <!-- <div id="headingdiv" class="homerow"> -->
+        <div class="title">
+            <h1 class="heading" style="display: flex;    margin: auto;
+                align-items: baseline;">
+                <span class="head" style="padding: 0 5px;">Platfrom </span>
+                <span class="medium"> to make Your</span>
+                <br />
+            </h1>
+            <h1 class="heading" style="display: flex;    margin: auto;
+                align-items: baseline;">
 
-        <div style='
+                <span class="head" style="padding: 0 5px;">Reading </span>
+                <span class="medium"> Efficient and Smooth</span>
+            </h1>
+        </div>
+    </div>
+    <!-- <div class="homeillus" id="qoutesdiv"> -->
+
+    <!-- Comtent Here -->
+
+    <!-- </div> -->
+    <!-- </div> -->
+
+    <div style='
           display: flex;
           flex-wrap: wrap-reverse;
           margin: 0 0 50px 0;
        '>
-            <div class="homerow">
+        <div class="homerow">
+            <div style="margin: 80px 0 10px 0; position:relative ">
+
+                <span class="head" style="margin: 10px "> Why Choose Us?</span>
                 <p class="paragraph">
-                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                    lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                    fugiat aliqua. Lorem ipsum dolor sit, amet consectetur adipisicing
-                    elit. Consequuntur, aliquam iste. Obcaecati rem similique eius
-                    accusamus placeat optio qui unde earum ad! Dolores unde a voluptatem
-                    elit. Consequuntur, aliquam iste. Obcaecati rem similique eius
-                    accusamus placeat optio qui unde earum ad! Dolores unde a voluptatem
+                    <i class='fa fa-book'></i>Ease Reading <br>
+                    <i class='fa fa-tasks'></i>Ease in Maintainance<br>
+                    <i class='fa fa-globe'></i>Ease Accessible<br>
+                    <i class='fa fa-leaf'></i>Environment Freindly<br>
                 </p>
-                <button class="homebutton">Get Started</button>
             </div>
-            <div class="homeillus">
-                <img src='images/notebook.svg' alt="" />
-            </div>
+            <button class="homebutton">Get Started</button>
         </div>
+        <div class="homeillus">
+            <img src='images/notebook.svg' alt="" />
+        </div>
+    </div>
     </div>
 
 

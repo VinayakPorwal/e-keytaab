@@ -26,10 +26,11 @@ if($result){
             // alert("Logged in")
             // echo '<script>
             // window.location.assign("index.php");
+            // alert(" password match")
+
             // </script> ';
 			echo '<script>
             window.location.assign("../index.php");
-            alert(" password match")
             </script>';
 			
             // echo "<button onclick='nav()'>nav</button>";

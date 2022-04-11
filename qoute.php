@@ -23,7 +23,7 @@ if (!isset($_SESSION['loggedin'])) {
 </head>
 
 <body>
-    <?php include "components/navbar.php" ; ?>
+    <?php include "components/navbar.php"; ?>
     <div class="header">
         <div class="progress-container " id="mytrack">
             <div class="progress-bar" id="myBar"></div>
@@ -32,7 +32,7 @@ if (!isset($_SESSION['loggedin'])) {
     <div class="inputee">
         <!-- <i class="fa fa-search"></i> -->
 
-        <input type="text" placeholder="Enter the book name" class="input_text" id="inputkey" />
+        <input type="text" placeholder="Enter the book name" class="input_text" id="inputkey"  />
         <button id="sub" onclick='dataa()'>
             <i class="fa fa-search"></i>
         </button>
@@ -44,6 +44,7 @@ if (!isset($_SESSION['loggedin'])) {
     </div>
 
     <script>
+        var input = document.getElementById('inputkey');
         function dataa() {
             var add = document.getElementById('maindiv');
             var key = document.getElementById('inputkey').value;
@@ -72,8 +73,14 @@ if (!isset($_SESSION['loggedin'])) {
                         link2.classList.add('button');
                         link2.href = data.items[i].accessInfo.pdf.downloadLink;
 
+                        var favbtn = document.createElement('i');
+                        favbtn.classList.add('fa');
+                        favbtn.classList.add('favbtn');
+                        favbtn.classList.add('fa-gratipay');
+
                         var language = document.createElement('p');
                         language.classList.add('p');
+                        language.innerHTML = "Language:"+ data.items[i].volumeInfo.language;
                         var category = document.createElement('p');
                         category.innerHTML = data.items[i].volumeInfo.categories;
                         category.classList.add('p');
@@ -103,10 +110,14 @@ if (!isset($_SESSION['loggedin'])) {
                         //   subtitle.innerHTML = subtext;
                         // }
 
+                        var favlan = document.createElement('div');
+                        favlan.classList.add('favlan');
+                        favlan.appendChild(favbtn)
+                        favlan.appendChild(language)
 
                         var lancat = document.createElement('div');
                         lancat.classList.add('lancat');
-                        lancat.appendChild(language)
+                        lancat.appendChild(favlan)
                         lancat.appendChild(category)
 
                         var preview = document.createElement('img');
@@ -155,8 +166,28 @@ if (!isset($_SESSION['loggedin'])) {
             key = ' ';
         }
         // dataa();
+        function searchbook(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                dataa();
+            }
+        };
+        input.addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                // document.getElementById("myBtn").click();
+                dataa();
+            }
+        });
+
+
+        function favbook(){
+            
+        }
     </script>
-<script src="func.js"></script>
 
 </body>
 

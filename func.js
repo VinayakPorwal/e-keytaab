@@ -16,9 +16,10 @@ function qoutes() {
     .then((data) => {
       // console.log(data);
     //   console.log(data[randomNumber]["text"]+  data[randomNumber]["author"]);
-      qoute.innerHTML =
-        data[randomNumber]["text"] ;
-        Qauthor.innerHTML = data[randomNumber]["author"];
+      qoute.innerHTML ='~'+
+      data[randomNumber]["author"] ;
+      Qauthor.innerHTML = 
+      "\"" +data[randomNumber]["text"] +"\"";
     })
 
     // .catch((err) => alert("cant Find citty name in Our Database!"));

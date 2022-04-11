@@ -17,13 +17,14 @@
   --yellow: #ffe700;
   --green: #74ee15;
   --skyblue: #4deeea;
+  --moregrey : #474e5d;
 }
 
 .projects {
   height: fit-content;
   /* overflow-y: scroll; */
   /* width: 99vw; */
-  background-color: #474e5d;
+  background-color: var(--grey);
   font-family: Helvetica, sans-serif;
   /* z-index: -1; */
 }
@@ -97,13 +98,14 @@ p {
 .qouteshead {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5);
   max-width: 600px;
+  min-width: 150px;
   /* display: flex; */
-  margin: 10px auto;
+  margin: 25px auto;
   text-align: center;
   background-color: var(--colorb);
   border-radius: 5px 5px 5px 5px;
   /* z-index: -1; */
-  padding: 8px 4px;
+  padding: 9px 4px;
   color: var(--color);
 }
 
@@ -146,7 +148,7 @@ p {
   /* height: 100vh; */
   width: 45%;
   margin: auto !important;
-  /* background-color: var(--white); */
+  background-color: var(--dblue);
 }
 .projhead {
   font-size: xx-large;
@@ -189,8 +191,20 @@ p {
   margin-right: 0;
 }
 
+.favlan{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-
+.favbtn{
+font-size: xx-large;
+padding: 4px 10px ;
+}
+.added{
+  background: radial-gradient(#e91e63, transparent);
+  border-radius: 50%;
+}
 .inputee {
   text-align: center;
   margin: 50px 0;
@@ -239,4 +253,9 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 250px;
+}
+.title2{
+  color: var(--black);
+  font-size: 25px;
+  text-align: center;
 }
